@@ -1,0 +1,158 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Section styles */
+.signup-area {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 50px 30px;
+}
+
+.section-title-wrapper {
+    margin-bottom: 55px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0;
+}
+
+
+/* Form wrapper styles */
+.sign-wrapper {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sign-header {
+    margin-bottom: 35px;
+}
+
+.sign-form {
+    width: 100%;
+}
+
+.sign-input-wrapper h5 {
+    
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.sign-input {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.sign-input input {
+    width: 100%;
+    padding: 10px 15px;
+    padding-left: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.sign-input i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.sign-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sign-agree {
+    display: flex;
+    align-items: center;
+}
+
+.m-check-input {
+    margin-right: 10px;
+}
+
+.m-check-label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.m-check-label a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.m-check-label a:hover {
+    text-decoration: underline;
+}
+
+.pic1 {
+    width: 10%;
+    float: right;
+    margin-left: 20px;
+}
+.pic2 {
+    position: absolute;
+    margin: 50px;
+    top: 50%;
+    right: 65%;
+    width: 250px;
+
+}
+
+
+/* Button styles */
+.e-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.e-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .signup-area {
+        padding: 30px 20px;
+    }
+}
