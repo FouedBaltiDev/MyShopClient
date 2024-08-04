@@ -1,0 +1,65 @@
+<app-header></app-header>
+<section class="signup-area po-rel-z1 pt-100 pb-145">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
+        <div class="section-title-wrapper text-center mb-55">
+          <h2 class="section-title"><strong>Create a free account</strong></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+        <div class="sign-wrapper white-bg">
+          <img src="assets/img/sign-up/add.png" class="pic1">
+          <div class="sign-header mb-35"></div>
+          <div class="sign-form">
+            <!-- Bind form submission to onSubmit() method -->
+            <form (ngSubmit)="onSubmit()">
+              <div class="sign-input-wrapper mb-25">
+                <h5>User name</h5>
+                <div class="sign-input">
+                  <!-- Bind full name input to user.fullName -->
+                  <input type="text" placeholder="name" [(ngModel)]="user.UserName" name="userName" required>
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+              <div class="sign-input-wrapper mb-25">
+                <h5>Email</h5>
+                <div class="sign-input">
+                  <!-- Bind email input to user.email -->
+                  <input type="email" placeholder="e-mail" [(ngModel)]="user.Email" name="email" required>
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+              <div class="sign-input-wrapper mb-25">
+                <h5>Password</h5>
+                <div class="sign-input">
+                  <!-- Bind password input to user.password -->
+                  <input type="password" placeholder="Password" [(ngModel)]="user.Password" name="password" required>
+                  <i class="fas fa-lock"></i>
+                </div>
+              </div>
+              <div class="sign-input-wrapper mb-10">
+                <h5>Re-Password</h5>
+                <div class="sign-input">
+                  <!-- Bind confirm password input to confirmPassword -->
+                  <input type="password" placeholder=" Confirm password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+                  <i class="fas fa-lock"></i>
+                </div>
+              </div>
+
+              <!-- Submit form button -->
+              <button class="e-btn w-100" type="submit"> <span></span> Sign Up</button>
+            </form>
+            <!-- Display error message if any -->
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+            <!-- Display success message if any -->
+            <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="assets/img/sign-up/mng.png" class="pic2">
+</section>

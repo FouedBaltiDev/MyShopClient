@@ -54,7 +54,7 @@ body {
 }
 
 .sign-input-wrapper h5 {
-    
+
     margin-bottom: 10px;
     font-size: 1rem;
     color: #333;
@@ -93,28 +93,7 @@ body {
     margin-bottom: 30px;
 }
 
-.sign-agree {
-    display: flex;
-    align-items: center;
-}
 
-.m-check-input {
-    margin-right: 10px;
-}
-
-.m-check-label {
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.m-check-label a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.m-check-label a:hover {
-    text-decoration: underline;
-}
 
 .pic1 {
     width: 10%;
@@ -125,7 +104,7 @@ body {
     position: absolute;
     margin: 50px;
     top: 50%;
-    right: 65%;
+    right:75%;
     width: 250px;
 
 }
