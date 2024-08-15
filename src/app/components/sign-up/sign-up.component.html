@@ -15,47 +15,59 @@
           <div class="sign-header mb-35"></div>
           <div class="sign-form">
             <!-- Bind form submission to onSubmit() method -->
-            <form (ngSubmit)="onSubmit()">
+            <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
               <div class="sign-input-wrapper mb-25">
                 <h5>User name</h5>
                 <div class="sign-input">
-                  <!-- Bind full name input to user.fullName -->
-                  <input type="text" placeholder="name" [(ngModel)]="user.UserName" name="userName" required>
+                  <!-- Bind full name input to user.UserName -->
+                  <input type="text" placeholder="name" [(ngModel)]="user.UserName" name="userName" #userName="ngModel" required (input)="onInputChange()">
                   <i class="fas fa-user"></i>
+                </div>
+                <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="text-danger">
+                  User name is required.
                 </div>
               </div>
               <div class="sign-input-wrapper mb-25">
                 <h5>Email</h5>
                 <div class="sign-input">
-                  <!-- Bind email input to user.email -->
-                  <input type="email" placeholder="e-mail" [(ngModel)]="user.Email" name="email" required>
+                  <!-- Bind email input to user.Email -->
+                  <input type="email" placeholder="e-mail" [(ngModel)]="user.Email" name="email" #email="ngModel" required (input)="onInputChange()">
                   <i class="fas fa-envelope"></i>
+                </div>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                  Valid email is required.
                 </div>
               </div>
               <div class="sign-input-wrapper mb-25">
                 <h5>Password</h5>
                 <div class="sign-input">
-                  <!-- Bind password input to user.password -->
-                  <input type="password" placeholder="Password" [(ngModel)]="user.Password" name="password" required>
+                  <!-- Bind password input to user.Password -->
+                  <input type="password" placeholder="Password" [(ngModel)]="user.Password" name="password" #password="ngModel" required (input)="onInputChange()">
                   <i class="fas fa-lock"></i>
+                </div>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                  Password is required.
                 </div>
               </div>
               <div class="sign-input-wrapper mb-10">
                 <h5>Re-Password</h5>
                 <div class="sign-input">
                   <!-- Bind confirm password input to confirmPassword -->
-                  <input type="password" placeholder=" Confirm password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+                  <input type="password" placeholder=" Confirm password" [(ngModel)]="confirmPassword" name="confirmPassword" #confirmPasswordField="ngModel" required (input)="onInputChange()">
                   <i class="fas fa-lock"></i>
+                </div>
+                <div *ngIf="confirmPasswordField.invalid && (confirmPasswordField.dirty || confirmPasswordField.touched)" class="text-danger">
+                  Confirm password is required.
                 </div>
               </div>
 
               <!-- Submit form button -->
-              <button class="e-btn w-100" type="submit"> <span></span> Sign Up</button>
+              <button class="e-btn w-100" type="submit" [disabled]="signUpForm.invalid"> <span></span> Sign Up</button>
             </form>
             <!-- Display error message if any -->
-            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
             <!-- Display success message if any -->
-            <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+            <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
           </div>
         </div>
       </div>

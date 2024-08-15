@@ -24,6 +24,17 @@ import { Banner3Component } from './components/home/banner3/banner3.component';
 import { NewsletterComponent } from './components/home/newsletter/newsletter.component';
 import { Product2Component } from './components/home/product2/product2.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AuthService } from './services/auth.service';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { EditProfileComponent } from './components/user/edit-profile/edit-profile.component';
+
+import { AddToCartComponent } from './components/user/add-to-cart/add-to-cart.component';
+import { AddReclamationComponent } from './components/user/add-reclamation/add-reclamation.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UserHomeComponent } from './components/user/user-home/user-home.component';
+import { ProductManagementComponent } from './components/admin/product-management/product-management.component';
+import { UserManagementComponent } from './components/admin/user-management/user-management.component';
+import { ComplaintManagementComponent } from './components/admin/complaint-management/complaint-management.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +58,19 @@ import { FooterComponent } from './components/footer/footer.component';
     NewsletterComponent,
     Product2Component,
     FooterComponent,
+    UnauthorizedComponent,
+    EditProfileComponent,
+
+    AddToCartComponent,
+    AddReclamationComponent,
+    DashboardComponent,
+    UserHomeComponent,
+    ProductManagementComponent,
+    UserManagementComponent,
+    ComplaintManagementComponent,
   ],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule, FormsModule, BrowserAnimationsModule],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

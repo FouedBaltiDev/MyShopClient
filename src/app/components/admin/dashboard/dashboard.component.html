@@ -1,0 +1,51 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+  <div class="backgrounds">
+    <div class="background bg-1"></div>
+    <div class="background bg-2"></div>
+  </div>
+
+  <div class="container">
+    <!-- Sign Out button -->
+    <div class="signout-button">
+      <button class="btn btn-outline-secondary btn-signout" (click)="onSignOut()">
+        <i class="fas fa-sign-out-alt"></i> Sign Out
+      </button>
+    </div>
+
+
+    <!-- Main content -->
+    <div class="main-content mt-4">
+      <h1>Welcome to the Admin Dashboard</h1>
+      <!-- Card layout -->
+      <div class="card-deck custom-card-deck">
+        <div class="card card-extended">
+          <div class="card-body text-center">
+            <img src="assets/img/cards/user-management.png" class="card-avatar" alt="User Management">
+            <h5 class="card-title">User Management</h5>
+            <p class="card-text">Manage your users from this section.</p>
+            <a href="#" class="btn btn-primary">Go to User Management</a>
+          </div>
+        </div>
+        <div class="card card-extended">
+          <div class="card-body text-center">
+            <img src="assets/img/cards/product-management.png" class="card-avatar" alt="Product Management">
+            <h5 class="card-title">Product Management</h5>
+            <p class="card-text">Manage your products from this section.</p>
+            <a href="#" class="btn btn-primary">Go to Product Management</a>
+          </div>
+        </div>
+        <div class="card card-extended">
+          <div class="card-body text-center">
+            <img src="assets/img/cards/complaint-management.png" class="card-avatar" alt="Complaint Management">
+            <h5 class="card-title">Complaint Management</h5>
+            <p class="card-text">Handle user complaints here.</p>
+            <a href="#" class="btn btn-primary">Go to Complaint Management</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

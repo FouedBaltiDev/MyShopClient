@@ -8,21 +8,41 @@ import { ContactComponent } from './components/contact/contact.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CartComponent } from './components/cart/cart.component';
+import { EditProfileComponent } from './components/user/edit-profile/edit-profile.component';
+
+import { AddToCartComponent } from './components/user/add-to-cart/add-to-cart.component';
+import { AddReclamationComponent } from './components/user/add-reclamation/add-reclamation.component';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { AdminGuard } from './guards/admin.guard';
+import { UserGuard } from './guards/user.guard';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UserHomeComponent } from './components/user/user-home/user-home.component';
+
 
 const routes: Routes = [
-  { path:'', component:HomeComponent},
-  { path: 'home', component:HomeComponent},
-  { path: 'shop', component:ShopComponent},
-  { path: 'blog', component:BlogComponent},
-  { path: 'about', component:AboutComponent},
-  { path: 'contact', component:ContactComponent},
-  { path: 'login', component:SignInComponent},
-  { path: 'signup', component:SignUpComponent},
-  { path: 'cart', component:CartComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent},
+  { path: 'shop', component: ShopComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: SignInComponent },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'edit-profile', component: EditProfileComponent, canActivate: [UserGuard] },
+  { path: 'add-to-cart', component: AddToCartComponent, canActivate: [UserGuard] },
+  { path: 'add-reclamation', component: AddReclamationComponent, canActivate: [UserGuard] },
+  // { path: 'unauthorized', component: UnauthorizedComponent },
+  // { path: '**', redirectTo: 'home' },
+  { path: 'admin', component: HomeComponent, canActivate: [AdminGuard] },
+  { path: 'user', component: HomeComponent, canActivate: [UserGuard] },
+  { path: 'dashboard', component: DashboardComponent}, // Route pour l'admin
+  { path: 'user-home', component: UserHomeComponent} // Route pour les utilisateurs normaux
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

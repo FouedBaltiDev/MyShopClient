@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "website-ecommerce"
+  "defaultProject": "website-ecommerce",
+  "cli": {
+    "analytics": "2df6b3d1-0b15-4161-aeab-16b6065e9965"
+  }
 }

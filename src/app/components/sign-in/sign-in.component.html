@@ -10,59 +10,53 @@
 </head>
 <body>
 
-
-<section class="sign-section pt-100 pb-145">
-
+  <section class="sign-section pt-100 pb-145">
     <div class="container">
-       <div class="row">
-          <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-             <div class="title-wrapper text-center mb-55">
-                <h2 class="title"><strong>Sign in</strong></h2><br>
-                <p>If you don't have an account you can <a routerLink="/signup">Register here!</a></p>
-             </div>
+      <div class="row">
+        <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
+          <div class="title-wrapper text-center mb-55">
+            <h2 class="title"><strong>Sign in</strong></h2><br>
+            <p>If you don't have an account you can <a routerLink="/signup">Register here!</a></p>
           </div>
-       </div>
-       <div class="row">
-          <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-             <div class="form-wrapper white-bg">
-                <div class="form-header mb-35"></div>
-                <div class="form-body">
-                  <img src="assets\img\sign-in\man-2.png" class="pic1">
-                   <form action="#">
-                      <div class="input-group mb-25">
-                         <h5>Email</h5>
-                         <div class="input-field">
-                            <input type="email" placeholder="e-mail address" required>
-                            <i class="fas fa-envelope"></i>
-                         </div>
-                      </div>
-                      <div class="input-group mb-10">
-                         <h5>Password</h5>
-                         <div class="input-field">
-                            <input type="password" placeholder="Password" required>
-                            <i class="fas fa-lock"></i>
-                         </div>
-                      </div>
-                      <div class="form-actions d-sm-flex justify-content-between mb-30">
-                         <div class="checkbox-group d-flex align-items-center">
-                            <input type="checkbox" id="keep-signed-in">
-                            <label for="keep-signed-in">Keep me signed in</label>
-                         </div>
-                      </div>
-                      <button class="btn btn-primary w-100">Sign In</button>
-                      <div class="new-account text-center mt-20">
-                         <p>New to Shopify? <a routerLink="/signup">Sign Up</a></p>
-                      </div>
-                   </form>
-
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+          <div class="form-wrapper white-bg">
+            <div class="form-header mb-35"></div>
+            <div class="form-body">
+              <img src="assets\img\sign-in\man-2.png" class="pic1">
+              <form (ngSubmit)="onSubmit()">
+                <div class="input-group mb-25">
+                  <h5>Username</h5>
+                  <div class="input-field">
+                    <input type="text" placeholder="Username" [(ngModel)]="user.userName" name="userName" required>
+                    <i class="fas fa-user"></i>
+                  </div>
                 </div>
-             </div>
+                <div class="input-group mb-10">
+                  <h5>Password</h5>
+                  <div class="input-field">
+                    <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required>
+                    <i class="fas fa-lock"></i>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit">Sign In</button>
+                <div class="new-account text-center mt-20">
+                  <p>New to Shopify? <a routerLink="/signup">Sign Up</a></p>
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger">
+                  {{ errorMessage }}
+                </div>
+              </form>
+            </div>
           </div>
-       </div>
+        </div>
+      </div>
     </div>
     <img src="assets\img\sign-in\man-1.png" class="pic2">
-</section>
+  </section>
 
 </body>
 </html>
-

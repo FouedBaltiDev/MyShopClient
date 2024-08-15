@@ -1,0 +1,17 @@
+.unauthorized {
+  text-align: center;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.unauthorized h1 {
+  color: #ff0000;
+}
+
+.unauthorized p {
+  margin-bottom: 20px;
+}
+
+.unauthorized .btn {
+  margin-top: 20px;
+}
