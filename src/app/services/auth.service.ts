@@ -24,7 +24,9 @@ export class AuthService {
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1])); // Décode le payload du token
       console.log('Token payload:', payload);
-      return of(payload.role); // Retourne le rôle de l'utilisateur
+
+      //return of(payload.role); // Retourne le rôle de l'utilisateur   // retourne undefined correction ligne au dessous ca retourne (User role)
+      return of(payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']);
     }
     return of(null); // Retourne null si pas de token
   }

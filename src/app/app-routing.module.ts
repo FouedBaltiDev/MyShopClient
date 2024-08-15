@@ -32,13 +32,10 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent, canActivate: [UserGuard] },
   { path: 'add-to-cart', component: AddToCartComponent, canActivate: [UserGuard] },
   { path: 'add-reclamation', component: AddReclamationComponent, canActivate: [UserGuard] },
-  // { path: 'unauthorized', component: UnauthorizedComponent },
-  // { path: '**', redirectTo: 'home' },
-  { path: 'admin', component: HomeComponent, canActivate: [AdminGuard] },
-  { path: 'user', component: HomeComponent, canActivate: [UserGuard] },
-  { path: 'dashboard', component: DashboardComponent}, // Route pour l'admin
-  { path: 'user-home', component: UserHomeComponent} // Route pour les utilisateurs normaux
-
+  { path: 'unauthorized', component: UnauthorizedComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]}, // Route pour l'admin
+  { path: 'user-home', component: UserHomeComponent, canActivate: [UserGuard] }, // Route pour les utilisateurs normaux
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
