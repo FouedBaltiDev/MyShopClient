@@ -9,7 +9,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CartComponent } from './components/cart/cart.component';
 import { EditProfileComponent } from './components/user/edit-profile/edit-profile.component';
-
+import { UserManagementComponent } from './components/admin/user-management/user-management.component';
+import { ProductManagementComponent } from './components/admin/product-management/product-management.component';
+import { ComplaintManagementComponent } from './components/admin/complaint-management/complaint-management.component';
 import { AddToCartComponent } from './components/user/add-to-cart/add-to-cart.component';
 import { AddReclamationComponent } from './components/user/add-reclamation/add-reclamation.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
@@ -35,6 +37,10 @@ const routes: Routes = [
   { path: 'unauthorized', component: UnauthorizedComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]}, // Route pour l'admin
   { path: 'user-home', component: UserHomeComponent, canActivate: [UserGuard] }, // Route pour les utilisateurs normaux
+  { path: 'user-management', component: UserManagementComponent, canActivate: [AdminGuard] },
+  { path: 'product-management', component: ProductManagementComponent, canActivate: [AdminGuard] },
+  { path: 'complaint-management', component: ComplaintManagementComponent, canActivate: [AdminGuard] },
+  { path: 'sign-up/:id', component: SignUpComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
