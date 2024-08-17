@@ -47,8 +47,9 @@ export class UserService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
-  // Méthode pour définir le rôle d'un utilisateur
-  setUserRole(userId: string, role: string): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${userId}/roles`, { role });
+   // Method to set the user's role
+   setUserRole(userId: string, role: string): Observable<any> {
+    const body = { userId: userId, newRole: role };
+    return this.http.post(`${this.apiUrl}/updateRole`, body);
   }
 }

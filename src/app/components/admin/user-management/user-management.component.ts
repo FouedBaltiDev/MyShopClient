@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class UserManagementComponent implements OnInit, OnDestroy {
   userSelected: any;
+  selectedRole: string = 'All'; // Valeur par défaut
   users: any = []
   private subscriptions: Subscription[] = [];
   
@@ -38,10 +39,27 @@ export class UserManagementComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
   }
 
-  setRole(userSelected: any) {
+  fillUserSelected(userSelected: any) {
     this.userSelected = userSelected;
   }
-  
+
+  updateUserRole(): void {
+    const sub = this.userService.setUserRole(this.userSelected.id, this.selectedRole).subscribe({
+      next: (data) => {
+        console.log('Update role', data);
+        alert('Role updated successfully!');
+      },
+      error: (error) => {
+        console.error('Error updating role:', error);
+        alert('Failed to update role. Please try again.');
+      },
+      complete: () => {
+        console.log('Role update operation completed.');
+      }
+    });
+
+    this.subscriptions.push(sub);
+  }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
