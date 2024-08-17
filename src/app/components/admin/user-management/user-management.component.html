@@ -27,12 +27,12 @@
                     <span class="email">{{ user.email }}</span>
                   </td>
                   <td class="user-role">
-                    <span class="role" *ngFor="let role of user.roles">{{ role.name }}&nbsp;&nbsp;</span>
+                    <span class="email">{{ user.role }}</span>
                   </td>
                   <td class="user-actions">
                     <a [routerLink]="['/sign-up', user.id]" class="btn btn-primary m-1">Edit</a>
                     <button class="btn btn-danger m-1" (click)="Delete(user.id)">Delete</button>
-                    <button class="btn btn-success m-1" (click)="setRole(user.id)">Set Role</button>
+                    <button data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success m-1" (click)="setRole(user)">Set Role</button>
                   </td>
                 </tr>
               </tbody>
@@ -43,3 +43,33 @@
     </div>
   </div>
 </section>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Set Role User</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        {{ userSelected?.email }}<br>
+        {{ userSelected?.userName }}<br>
+        {{ userSelected?.role }}
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
